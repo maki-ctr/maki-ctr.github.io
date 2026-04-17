@@ -32,7 +32,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://malickmanso.com/">
 <meta property="og:title" content="Málick Manso — Project Manager | Belgium">
-<meta property="og:description" content="15+ years of international project delivery across technology, financial services &amp; regulated industries. Based in Belgium. Open to senior PM and consulting roles.">
+<meta property="og:description" content="11+ years of international project delivery across digital ecosystems, MedTech, and regulated industries. Based in Belgium. Open to senior PM and consulting roles.">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Málick Manso","jobTitle":"Project Manager","description":"Project Manager and Digital Consultant with 11+ years international experience in MedTech and regulated environments.","url":"https://malickmanso.com","email":"malickmanso@gmail.com","telephone":"+32456921365","address":{"@type":"PostalAddress","addressLocality":"Sint-Truiden","addressRegion":"Limburg","addressCountry":"BE"},"sameAs":["https://linkedin.com/in/malickmanso"],"knowsLanguage":[{"@type":"Language","name":"Portuguese"},{"@type":"Language","name":"English"},{"@type":"Language","name":"French"},{"@type":"Language","name":"Dutch"}],"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"ISO 13485:2016 Quality Management Systems"},{"@type":"EducationalOccupationalCredential","name":"EU MDR 2017/745"},{"@type":"EducationalOccupationalCredential","name":"Google Project Management Professional Certificate"}],"alumniOf":[{"@type":"CollegeOrUniversity","name":"Universidade Lusófona","address":{"@type":"PostalAddress","addressLocality":"Lisbon","addressCountry":"PT"}}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -124,6 +124,7 @@ h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);font-weight:400;lin
 .skills-list li::before{content:'→';font-family:var(--mono);font-size:0.62rem;color:rgba(245,242,236,0.22);flex-shrink:0;margin-top:0.1rem}
 
 .slider-nav{display:flex;align-items:center;justify-content:space-between;padding:1.1rem var(--pad);border-top:0.5px solid rgba(245,242,236,0.07)}
+.slider-nav-top{border-top:none;border-bottom:0.5px solid rgba(245,242,236,0.07)}
 .slider-dots{display:flex;gap:0.45rem}
 .slider-dot{width:22px;height:2px;background:rgba(245,242,236,0.18);cursor:pointer;transition:all 0.22s}
 .slider-dot.active{background:var(--paper);width:38px}
@@ -221,9 +222,15 @@ footer div{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em}
 .side-overlay{position:fixed;inset:0;background:transparent;z-index:199;pointer-events:none;transition:background 0.3s}
 .side-overlay.open{background:rgba(13,13,13,0.38);pointer-events:all}
 
+
+/* Floating CV download — persistent */
+.float-cv{position:fixed;bottom:1.5rem;right:1.5rem;z-index:90;display:inline-flex;align-items:center;gap:0.5rem;padding:0.7rem 1.1rem;background:var(--accent);color:#fff;text-decoration:none;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;box-shadow:0 4px 16px rgba(26,53,87,0.25);transition:all 0.2s;border:none}
+.float-cv:hover{background:#0d2440;transform:translateY(-2px);box-shadow:0 6px 20px rgba(26,53,87,0.35)}
+@media(max-width:640px){.float-cv{bottom:1rem;right:1rem;padding:0.6rem 0.9rem;font-size:0.58rem}}
 </style>
 </head>
 <body>
+<a href="malick-manso-cv.pdf" class="float-cv" download aria-label="Download CV">↓ Download CV</a>
 
 <nav>
   <a href="#" class="nav-name">Málick Manso</a>
@@ -319,6 +326,13 @@ footer div{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em}
     <h2>Case studies</h2>
   </div>
   <div class="case-title-display" id="caseTitle" aria-live="polite">OLX / Naspers <em>Technology &amp; Market Growth</em></div>
+    <div class="slider-nav slider-nav-top">
+    <div class="slider-dots" id="sliderDotsTop"></div>
+    <div class="slider-btns">
+      <button class="slider-btn" id="prevBtnTop" aria-label="Previous">←</button>
+      <button class="slider-btn" id="nextBtnTop" aria-label="Next">→</button>
+    </div>
+  </div>
   <div class="slider-track-wrap" id="sliderWrap">
     <div class="slider-track" id="sliderTrack">
 
@@ -567,7 +581,7 @@ footer div{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em}
 <script>
 // ── STAT GRID ─────────────────────────────────────────────────
 const stats = [
-  {num:'15+',  pairs:[['Years experience','International PM']]},
+  {num:'11+',  pairs:[['Years experience','International PM']]},
   {num:'7',    pairs:[['Countries','Active markets']]},
   {num:'17+',  pairs:[['Qualifications','ISO 13485 · EU MDR']]},
   {num:'€2M+', pairs:[['Budget managed','Financial services']]},
@@ -611,6 +625,21 @@ slides.forEach((_,i)=>{
   d.addEventListener('click',()=>goTo(i));
   dotsEl.appendChild(d);
 });
+// Duplicate dots to top nav
+const dotsElTop=document.getElementById('sliderDotsTop');
+if(dotsElTop){
+  slides.forEach((_,i)=>{
+    const d=document.createElement('div');
+    d.className='slider-dot'+(i===0?' active':'');
+    d.addEventListener('click',()=>goTo(i));
+    dotsElTop.appendChild(d);
+  });
+}
+// Wire top nav buttons
+const prevBtnTop=document.getElementById('prevBtnTop');
+const nextBtnTop=document.getElementById('nextBtnTop');
+if(prevBtnTop)prevBtnTop.addEventListener('click',()=>goTo(Math.max(0,cur-1)));
+if(nextBtnTop)nextBtnTop.addEventListener('click',()=>goTo(Math.min(slides.length-1,cur+1)));
 
 function setTitle(idx){
   const s=slides[idx];

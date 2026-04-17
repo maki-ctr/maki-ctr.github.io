@@ -30,7 +30,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://malickmanso.com/">
 <meta property="og:title" content="Málick Manso — Projectmanager | België">
-<meta property="og:description" content="15+ jaar internationale projectlevering in technologie, financiële dienstverlening en gereguleerde sectoren. Gevestigd in België. Beschikbaar voor senior PM- en consultingrollen.">
+<meta property="og:description" content="Project Manager &amp; Digital Consultant in België. 11+ jaar in MedTech, gereguleerde sectoren &amp; digitale ecosystemen. ISO 13485, EU MDR gecertificeerd.">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Málick Manso","jobTitle":"Project Manager","url":"https://malickmanso.com","email":"malickmanso@gmail.com","telephone":"+32456921365","address":{"@type":"PostalAddress","addressLocality":"Belgium","addressCountry":"BE"},"sameAs":["https://linkedin.com/in/malickmanso"],"knowsLanguage":["Portuguese","English","French","Dutch"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -122,6 +122,7 @@ h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);font-weight:400;lin
 .skills-list li::before{content:'→';font-family:var(--mono);font-size:0.62rem;color:rgba(245,242,236,0.22);flex-shrink:0;margin-top:0.1rem}
 
 .slider-nav{display:flex;align-items:center;justify-content:space-between;padding:1.1rem var(--pad);border-top:0.5px solid rgba(245,242,236,0.07)}
+.slider-nav-top{border-top:none;border-bottom:0.5px solid rgba(245,242,236,0.07)}
 .slider-dots{display:flex;gap:0.45rem}
 .slider-dot{width:22px;height:2px;background:rgba(245,242,236,0.18);cursor:pointer;transition:all 0.22s}
 .slider-dot.active{background:var(--paper);width:38px}
@@ -215,9 +216,15 @@ footer div{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em}
 .side-overlay{position:fixed;inset:0;background:transparent;z-index:199;pointer-events:none;transition:background 0.3s}
 .side-overlay.open{background:rgba(13,13,13,0.38);pointer-events:all}
 
+
+/* Floating CV download — persistent */
+.float-cv{position:fixed;bottom:1.5rem;right:1.5rem;z-index:90;display:inline-flex;align-items:center;gap:0.5rem;padding:0.7rem 1.1rem;background:var(--accent);color:#fff;text-decoration:none;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;box-shadow:0 4px 16px rgba(26,53,87,0.25);transition:all 0.2s;border:none}
+.float-cv:hover{background:#0d2440;transform:translateY(-2px);box-shadow:0 6px 20px rgba(26,53,87,0.35)}
+@media(max-width:640px){.float-cv{bottom:1rem;right:1rem;padding:0.6rem 0.9rem;font-size:0.58rem}}
 </style>
 </head>
 <body>
+<a href="malick-manso-cv.pdf" class="float-cv" download aria-label="Download CV">↓ CV Downloaden</a>
 
 <nav>
   <a href="#" class="nav-name">Málick Manso</a>
@@ -312,14 +319,21 @@ footer div{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em}
     <h2>Casestudies</h2>
   </div>
   <div class="case-title-display" id="caseTitle" aria-live="polite">OLX / Naspers <em>Technologie &amp; Groei</em></div>
+    <div class="slider-nav slider-nav-top">
+    <div class="slider-dots" id="sliderDotsTop"></div>
+    <div class="slider-btns">
+      <button class="slider-btn" id="prevBtnTop" aria-label="Previous">←</button>
+      <button class="slider-btn" id="nextBtnTop" aria-label="Next">→</button>
+    </div>
+  </div>
   <div class="slider-track-wrap" id="sliderWrap">
     <div class="slider-track" id="sliderTrack">
 
-      <div class="slide" data-title="OLX / Naspers" data-sub="Technology &amp; Market Growth">
+      <div class="slide" data-title="OLX / Naspers" data-sub="Technologie &amp; Marktgroei">
         <div class="slide-main">
           <div class="slide-meta"><span class="slide-tag">Productmanagement</span><span class="slide-tag">Marktgroei</span><span class="slide-tag">P&amp;L-verantwoordelijkheid</span><span class="slide-tag">2012–2014</span></div>
-          <h3 class="slide-title">OLX Angola &amp; Mozambique — Taking Two Markets to Category Leadership</h3>
-          <p class="slide-intro">Naspers had acquired OLX and was expanding into emerging markets. Angola and Mozambique were early-stage with no traction. I was brought in to own both simultaneously — and took them to category leadership.</p>
+          <h3 class="slide-title">OLX Angola &amp; Mozambique — Twee markten naar marktleiderschap</h3>
+          <p class="slide-intro">Naspers had OLX overgenomen en breidde uit naar opkomende markten. Angola en Mozambique stonden in de kinderschoenen zonder tractie. Ik werd aangetrokken om beide gelijktijdig te beheren — en bracht ze naar marktleiderschap.</p>
           <p class="slide-stl">Wat ik deed</p>
           <div class="slide-body">
             <p>Before any operational expansion, I developed a market entry study for both countries — audience opportunity, traffic projections, competitive landscape, investment case — presented to Naspers and instrumental in securing formal investment approval.</p>
@@ -347,11 +361,11 @@ footer div{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em}
         </div>
       </div>
 
-      <div class="slide" data-title="Moza Banco" data-sub="Financial Services &amp; Regulated">
+      <div class="slide" data-title="Moza Banco" data-sub="Financiële Diensten &amp; Gereguleerd">
         <div class="slide-main">
           <div class="slide-meta"><span class="slide-tag">Financieel productontwerp</span><span class="slide-tag">Klantanalyse</span><span class="slide-tag">Gereguleerde omgeving</span><span class="slide-tag">2015–2016</span></div>
-          <h3 class="slide-title">Moza Banco — Product Design &amp; Customer Intelligence in Banking</h3>
-          <p class="slide-intro">Full-time Marketing Officer at one of Mozambique's established commercial banks, reporting directly to the administration. Three parallel mandates across product, analytics, and agency oversight — all inside a regulated financial environment.</p>
+          <h3 class="slide-title">Moza Banco — Productontwerp &amp; Klantintelligentie in het Bankwezen</h3>
+          <p class="slide-intro">Voltijds Marketing Officer bij een van Mozambique's gevestigde commerciële banken, rechtstreeks rapporterend aan het bestuur. Drie parallelle mandaten — product, analytics en agencytoezicht — binnen een gereguleerde financiële omgeving.</p>
           <p class="slide-stl">Wat ik deed</p>
           <div class="slide-body">
             <p><strong style="color:rgba(245,242,236,0.82);font-weight:400;">Insurance product design:</strong> Built a complete credit card insurance product for 1,763 accounts across three tiers — coverage specs, pricing model, competitive benchmarking against two providers. Ready for regulatory review.</p>
@@ -378,11 +392,11 @@ footer div{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em}
         </div>
       </div>
 
-      <div class="slide" data-title="Vodafone Uganda / Afrimax" data-sub="Technology &amp; Telecoms Strategy">
+      <div class="slide" data-title="Vodafone Uganda / Afrimax" data-sub="Technologie &amp; Telecom Strategie">
         <div class="slide-main">
           <div class="slide-meta"><span class="slide-tag">Digitale strategie</span><span class="slide-tag">Marktonderzoek</span><span class="slide-tag">Multi-land</span><span class="slide-tag">Africa · 2017</span></div>
-          <h3 class="slide-title">Vodafone Uganda / Afrimax — 360° Strategy Across Four Markets</h3>
-          <p class="slide-intro">Afrimax Group needed a comprehensive digital strategy for its NGSME product line across Uganda, Ghana, Zambia, and Cameroon simultaneously — different digital maturity, different competitive dynamics. One coherent framework, localised per market.</p>
+          <h3 class="slide-title">Vodafone Oeganda / Afrimax — 360° strategie over vier markten</h3>
+          <p class="slide-intro">Afrimax Group had een volledige digitale strategie nodig voor zijn NGSME-productlijn in Oeganda, Ghana, Zambia en Kameroen tegelijkertijd — verschillende digitale maturiteit, verschillende concurrentiedynamiek. Eén coherent kader, gelokaliseerd per markt.</p>
           <p class="slide-stl">Wat ik deed</p>
           <div class="slide-body">
             <p>Started with a Google Analytics audit of the existing digital presence — 618,440 sessions across 10 markets, identifying traffic patterns, conversion gaps, and behaviour. This evidence base drove all strategic recommendations.</p>
@@ -408,11 +422,11 @@ footer div{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em}
         </div>
       </div>
 
-      <div class="slide" data-title="Dieci Volte Meglio" data-sub="Multi-channel Campaign Delivery">
+      <div class="slide" data-title="Dieci Volte Meglio" data-sub="Multi-kanaals Campagne">
         <div class="slide-main">
           <div class="slide-meta"><span class="slide-tag">Campagnelevering</span><span class="slide-tag">Betaalde media</span><span class="slide-tag">Multi-channel</span><span class="slide-tag">Italy · 2018</span></div>
-          <h3 class="slide-title">Dieci Volte Meglio — Italian National Election Campaign, 2018</h3>
-          <p class="slide-intro">Contracted 25 days before Italy's national legislative elections to own the digital campaign end-to-end for a political movement with 11 candidates across multiple regions. No runway. Every day mattered.</p>
+          <h3 class="slide-title">Dieci Volte Meglio — Italiaanse Nationale Verkiezingscampagne, 2018</h3>
+          <p class="slide-intro">Aangesteld 25 dagen voor de Italiaanse nationale parlementsverkiezingen om de digitale campagne end-to-end te leiden voor een politieke beweging met 11 kandidaten in meerdere regio's. Geen speelruimte. Elke dag telde.</p>
           <p class="slide-stl">Wat ik deed</p>
           <div class="slide-body">
             <p>Two-phase paid media structure agreed with 202 Strategies (Washington DC). Phase 1 concentrated spend behind primary digital assets. Phase 2 shifted to direct voter mobilisation in the final week.</p>
@@ -439,11 +453,11 @@ footer div{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em}
         </div>
       </div>
 
-      <div class="slide" data-title="Crossmedia" data-sub="9 Years · 7 Countries · Entrepreneurship">
+      <div class="slide" data-title="Crossmedia" data-sub="9 jaar · 7 landen · Ondernemerschap">
         <div class="slide-main">
           <div class="slide-meta"><span class="slide-tag">Bedrijfsoprichting</span><span class="slide-tag">Portfoliooverzicht</span><span class="slide-tag">7 landen · 9 jaar</span></div>
-          <h3 class="slide-title">Crossmedia — Nine Years Running a Multi-Country Consultancy</h3>
-          <p class="slide-intro">In August 2014 I registered a consultancy in Mozambique and ran it for nine years across seven countries — up to six concurrent projects at peak. Clients ranged from Walmart Group subsidiaries to Washington DC political firms to London restaurant chains.</p>
+          <h3 class="slide-title">Crossmedia — Negen jaar aan het hoofd van een multi-landen adviesbureau</h3>
+          <p class="slide-intro">In augustus 2014 registreerde ik een adviesbureau in Mozambique en leidde het negen jaar lang in zeven landen — tot zes gelijktijdige projecten op piekmomenten. Klanten varieerden van Walmart Group-dochterondernemingen tot politieke bureaus in Washington DC en restaurantketens in Londen.</p>
           <p class="slide-stl">Geselecteerde opdrachten</p>
           <div class="slide-body">
             <p><strong style="color:rgba(245,242,236,0.82);font-weight:400;">Byron Hamburgers (UK, 2018):</strong> Digital strategy supporting rebrand across 60+ UK locations. Competitive benchmarking vs Five Guys, Honest Burgers, Nando's, GBK. Per-location audience architecture for the full UK estate. £28,986 spent, 61,614 engagements at 2.43% average engagement rate.</p>
@@ -560,7 +574,7 @@ footer div{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em}
 <script>
 // ── STAT GRID ─────────────────────────────────────────────────
 const stats = [
-  {num:'15+',  pairs:[['Jaar ervaring','Internationale PM']]},
+  {num:'11+',  pairs:[['Jaar ervaring','Internationale PM']]},
   {num:'7',    pairs:[['Landen','Actieve markten']]},
   {num:'17+',  pairs:[['Kwalificaties','ISO 13485 · EU MDR']]},
   {num:'€2M+', pairs:[['Budget beheerd','Financiële diensten']]},
@@ -604,6 +618,21 @@ slides.forEach((_,i)=>{
   d.addEventListener('click',()=>goTo(i));
   dotsEl.appendChild(d);
 });
+// Duplicate dots to top nav
+const dotsElTop=document.getElementById('sliderDotsTop');
+if(dotsElTop){
+  slides.forEach((_,i)=>{
+    const d=document.createElement('div');
+    d.className='slider-dot'+(i===0?' active':'');
+    d.addEventListener('click',()=>goTo(i));
+    dotsElTop.appendChild(d);
+  });
+}
+// Wire top nav buttons
+const prevBtnTop=document.getElementById('prevBtnTop');
+const nextBtnTop=document.getElementById('nextBtnTop');
+if(prevBtnTop)prevBtnTop.addEventListener('click',()=>goTo(Math.max(0,cur-1)));
+if(nextBtnTop)nextBtnTop.addEventListener('click',()=>goTo(Math.min(slides.length-1,cur+1)));
 
 function setTitle(idx){
   const s=slides[idx];
